@@ -53,7 +53,7 @@ class QueueLinkedList<T>{
     }
     
     func printQueue(){
-        var currentNode:QueueNode<T>? = head
+        var currentNode = head
         while let node = currentNode{
             print(node.value)
             currentNode = node.next
@@ -68,7 +68,7 @@ queue.enqueue(8)
 queue.enqueue(4)
 queue.enqueue(12)
 
-queue.printQueue()
+//queue.printQueue()
 
 print("Queue size: \(queue.size)")
 print("Is queue empty: \(queue.isEmpty)")
@@ -77,6 +77,8 @@ print(queue.dequeue() ?? "Queue is empty")
 print(queue.dequeue() ?? "Queue is empty")
 print(queue.dequeue() ?? "Queue is empty")
 print(queue.dequeue() ?? "Queue is empty")
+queue.enqueue(13)
 
+queue.printQueue()
 print("Queue size: \(queue.size)")
 

@@ -35,7 +35,7 @@ class CirculerLinkedList<T> {
             head = nil
             tail = nil
         }else{
-            head?.next = head?.next
+            head = head?.next
             tail?.next = head
         }
         
@@ -48,16 +48,20 @@ class CirculerLinkedList<T> {
             return
         }
         var currentNode = head
-
-        while currentNode !== head{
-            print(currentNode?.value)
+        while let node = currentNode{
+            print(node.value, terminator: " ")
             currentNode = currentNode?.next
+            if currentNode === head{
+                break
+            }
         }
     }
 }
 
 
 var queaue = CirculerLinkedList<Any>()
+
+print(queaue.deQueue() ?? "Queue empty")
 
 queaue.enQueue(8)
 queaue.enQueue(12)

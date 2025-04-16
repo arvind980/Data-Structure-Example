@@ -10,7 +10,7 @@ struct QueueArr<T>{
         queue.isEmpty ? nil : queue.removeFirst()
     }
     
-    var peak: T?{
+    var front: T?{
         queue.first
     }
     
@@ -30,8 +30,8 @@ queue.enqueue(2)
 queue.enqueue(3)
 
 print(queue.isEmpty)
-print(queue.peak!)
-print(queue.size) 
+print(queue.front!)
+print(queue.size)
 
 queue.dequeue()
-print(queue.peak!)
+print(queue.front!)
